@@ -1,0 +1,104 @@
+<ion-content [fullscreen]="true" (ionScroll)="ionScroll()" scroll-Events="true" id="content">
+  <ion-fab id="addData_FabBtn" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button hidden id='BackTop'  size='small' color="secondary" (click)="backContentTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="guonei-info">
+    <div class="header-wrap">
+      <div class="title">国内疫情</div>
+      <div class="explain">
+        <span class="left">数据更新至 {{modifyTime}}</span>
+        <span class="right">
+          <i style="background-image: url(assets/icon/question-mark.f7b4fec.png);background-size: 13px 13px;width: 13px;height: 13px;display: inline-block;"></i>
+          数据说明
+        </span>
+      </div>
+    </div>
+    <div class="footer-wrap">
+      <div class="header-content">
+        <div class="header">
+          <div class="div01">现有确诊</div>
+          <div class="div02" style="color: #ff6a57;">{{currentConfirmedCount}}</div>
+          <div class="div03">昨日<span style="color: #ff6a57;">{{currentConfirmedIncr}}</span></div>
+        </div>
+        <div class="header">
+          <div class="div01">现有疑似</div>
+          <div class="div02" style="color: #ec9217;">{{suspectedCount}}</div>
+          <div class="div03">昨日<span style="color: #ec9217;">{{suspectedIncr}}</span></div>
+        </div>
+        <div class="header">
+          <div class="div01">现有重症</div>
+          <div class="div02" style="color: #545499;">{{seriousCount}}</div>
+          <div class="div03">昨日<span style="color: #545499;">{{seriousIncr}}</span></div>
+        </div>
+        <div class="header">
+          <div class="div01">累计确诊</div>
+          <div class="div02" style="color: #E83132;">{{confirmedCount}}</div>
+          <div class="div03">昨日<span style="color: #E83132;">{{confirmedIncr}}</span></div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer">
+          <div class="div01">累计治愈</div>
+          <div class="div02" style="color: #10AEB5;">{{curedCount}}</div>
+          <div class="div03">昨日<span style="color: #10AEB5">{{curedIncr}}</span></div>
+        </div>
+        <div class="footer">
+          <div class="div01">累计死亡</div>
+          <div class="div02" style="color: #4D5054;">{{deadCount}}</div>
+          <div class="div03">昨日<span style="color: #4D5054">{{deadIncr}}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 国内地图 -->
+  <div class="guonei-map">
+    <div class="header-wrap">
+      <span class="left-btn change-btn">现有确诊</span>
+      <span class="right-btn">累计确诊</span>
+    </div>
+    <div class="center-wrap">
+      {{textInfo}}
+    </div>
+    <div class="footer-wrap">
+      <app-chinamap [currentConfirmedCountList]="currentConfirmedCountList"></app-chinamap>
+    </div>
+  </div>
+  <!-- 国内各地区疫情统计汇总 -->
+  <div class="guonei-location">
+    <div class="title">国内各地区疫情统计汇总</div>
+    <div class="title02">7:00-10:00为更新高峰，数据滞后敬请谅解</div>
+    <div class="table-info">
+      <table class="city-tab">
+        <thead class="title-thead">
+          <tr>
+            <th>疫情地区</th>
+            <th>现有</th>
+            <th>累计</th>
+            <th>治愈</th>
+            <th>死亡</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of cityListTopTen">
+          <tr >
+            <td (click)="showTr($event)" class="VirusTable_1-1-264_MdE8uT">{{item.provinceShortName}}</td>
+            <td>{{item.currentConfirmedCount}}</td>
+            <td>{{item.confirmedCount}}</td>
+            <td>{{item.curedCount}}</td>
+            <td>{{item.deadCount}}</td>
+          </tr>
+          <tr *ngFor="let cityList of item.cities" style="display: none;">
+            <td style="color: #00bec7;">{{cityList.cityName}}</td>
+            <td>{{cityList.currentConfirmedCount}}</td>
+            <td>{{cityList.confirmedCount}}</td>
+            <td>{{cityList.curedCount}}</td>
+            <td>{{cityList.deadCount}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="text-align: center;font-size: 13px;margin-top: 8px;" (click)="showAll()">{{showTitle}}</div>
+    </div>
+  </div>
+
+</ion-content>

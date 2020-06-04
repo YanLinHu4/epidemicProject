@@ -1,0 +1,202 @@
+// 国内疫情信息样式
+.guonei-info {
+    padding: 20px 15px 10px 15px;
+    // background-color: yellow;
+
+    .header-wrap {
+        .title {
+            color: #000;
+            font-weight: 700;
+        }
+        .explain {
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            color: #999;
+            
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+        }
+    }
+
+    .footer-wrap {
+        margin: 15px 8px 0 8px;
+        .header-content {
+            height: 70px;
+            overflow: hidden;
+            .header {
+                width: 25%;
+                height: 78px;
+                float: left;
+                .div01 {
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+                .div02 {
+                    height: 30px;
+                    text-align: center;
+                    line-height: 38px;
+                    font-size: 19px;
+                    font-weight: 700;
+                }
+                .div03 {
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 10px;
+                    color: #999;
+                }
+            }
+        }
+        .footer-content {
+            height: 78px;
+            overflow: hidden;
+            margin-top: 15px;
+            .footer {
+                width: 25%;
+                height: 78px;
+                float: left;
+                .div01 {
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+                .div02 {
+                    height: 30px;
+                    text-align: center;
+                    line-height: 38px;
+                    font-size: 19px;
+                    font-weight: 700;
+                }
+                .div03 {
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 10px;
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+// 国内地图样式
+.guonei-map {
+    padding: 20px 15px 10px 15px;
+    background-color: #f8f9fa;
+    .header-wrap {
+        text-align: center;
+        border-radius: 8px;
+        background-color: #e3e6eb;
+        span {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 8px;
+        }
+        .left-btn {
+            width: 49.5%;
+        }
+        .right-btn {
+            width: 49%;
+        }
+        .change-btn {
+            background-color: #fff;
+            font-weight: 700;
+            height: 36px;
+            line-height: 36px;
+            margin-top: 2px;
+        }
+    }
+    .center-wrap {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+    }
+}
+
+// <!-- 国内各地区疫情统计汇总 -->
+.guonei-location {
+    padding: 20px 15px 10px 15px;
+    .title {
+        height: 20px;
+        line-height: 20px;
+        color: #000;
+        font-size: 14px;
+    }
+    .title02 {
+        color: #999;
+        font-size: 12px;
+    }
+    .table-info {
+        margin-top: 15px;
+        .city-tab {
+            table-layout: fixed;
+            width: 100%;
+            margin-top: .625rem;
+            text-align: center;
+            border-spacing: 0 .3125rem;
+            font-size: .8125rem;
+            color: #4d5054;
+            border-collapse: separate;
+            vertical-align: middle;
+            display: table;
+            line-height: normal;
+            thead {
+                font-size: .938rem;
+                tr {
+                    color: #555;
+                    font-size: .75rem;
+                    font-weight: 700;
+                    height: 2.0625rem;
+                    line-height: 1;
+                    th {
+                        text-align: center;
+                        font-weight: 700;
+                        border-top-left-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                        background: #f5f6f7;
+                        border-right: .0625rem solid #fff;
+                        width: 28.5%;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    background: #f5f6f7;
+                    display: table-row;
+                    font-size: .75rem;
+                    font-weight: 700;
+                    height: 2.0625rem;
+                    line-height: 1;
+                    td {
+                        text-align: center;
+                        font-weight: 700;
+                        border-top-left-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                        background: #f5f6f7;
+                        width: 28.5%;
+                        vertical-align: middle;
+                    }
+                    .VirusTable_1-1-264_MdE8uT {
+                        background-color: #00bec9;
+                        color: #fff;
+                        font-weight: 700;
+                        border-top-left-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
