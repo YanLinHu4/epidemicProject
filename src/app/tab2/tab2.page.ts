@@ -68,7 +68,7 @@ export class Tab2Page {
 
       setTimeout(() => {
         this.currentConfirmedCountFun();
-      }, 500);
+      }, 600);
     
   }
 
